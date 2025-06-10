@@ -9,20 +9,22 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-platinum/50 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <CheckSquare className="h-8 w-8 text-gray-900" />
-            <span className="ml-2 text-xl font-bold text-gray-900">Schoology X</span>
+            <div className="bg-gradient-primary p-2 rounded-xl">
+              <CheckSquare className="h-8 w-8 text-white" />
+            </div>
+            <span className="ml-3 text-2xl font-bold text-night">Schoology X</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
-            <a href="#installation" className="text-gray-600 hover:text-gray-900">Installation</a>
+            <a href="#features" className="text-cinereous hover:text-viridian font-medium transition-colors duration-200">Features</a>
+            <a href="#installation" className="text-cinereous hover:text-viridian font-medium transition-colors duration-200">Installation</a>
             <button 
               onClick={handleDownload}
-              className="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800"
+              className="bg-gradient-primary text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
             >
               Download Extension
             </button>
@@ -31,7 +33,7 @@ export function Header() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-gray-900"
+              className="text-cinereous hover:text-viridian p-2"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -40,13 +42,13 @@ export function Header() {
       </nav>
 
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#features" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Features</a>
-            <a href="#installation" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Installation</a>
+        <div className="md:hidden bg-white border-t border-platinum">
+          <div className="px-4 pt-4 pb-6 space-y-3">
+            <a href="#features" className="block px-4 py-3 text-cinereous hover:text-viridian font-medium">Features</a>
+            <a href="#installation" className="block px-4 py-3 text-cinereous hover:text-viridian font-medium">Installation</a>
             <button 
               onClick={handleDownload}
-              className="w-full text-left px-3 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800"
+              className="w-full text-left px-4 py-3 bg-gradient-primary text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-200"
             >
               Download Extension
             </button>

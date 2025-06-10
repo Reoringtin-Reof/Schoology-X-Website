@@ -8,54 +8,85 @@ export function Installation() {
 
   const steps = [
     {
-      icon: <Download className="h-8 w-8 text-indigo-600" />,
+      icon: <Download className="h-10 w-10 text-white" />,
       title: "Download Extension",
-      description: "Click the download button to get the latest version"
+      description: "Get the latest version with one click",
+      color: "bg-gradient-to-br from-viridian to-celadon"
     },
     {
-      icon: <Chrome className="h-8 w-8 text-indigo-600" />,
+      icon: <Chrome className="h-10 w-10 text-white" />,
       title: "Add to Browser",
-      description: "Install the extension in your Chrome browser"
+      description: "Install seamlessly in Chrome browser",
+      color: "bg-gradient-to-br from-celadon to-viridian"
     },
     {
-      icon: <Settings className="h-8 w-8 text-indigo-600" />,
+      icon: <Settings className="h-10 w-10 text-white" />,
       title: "Configure Settings",
-      description: "Customize the extension to your preferences"
+      description: "Customize to match your preferences",
+      color: "bg-gradient-to-br from-cinereous to-viridian"
     },
     {
-      icon: <Monitor className="h-8 w-8 text-indigo-600" />,
+      icon: <Monitor className="h-10 w-10 text-white" />,
       title: "Start Using",
-      description: "Visit Schoology and enjoy the enhanced to-do list"
+      description: "Enjoy your enhanced Schoology experience",
+      color: "bg-gradient-to-br from-viridian to-cinereous"
     }
   ];
 
   return (
-    <section id="installation" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Quick and Easy Installation
+    <section id="installation" className="py-24 bg-gradient-secondary relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-viridian rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-celadon rounded-full mix-blend-multiply filter blur-xl"></div>
+      </div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-night mb-6">
+            Quick & Easy
+            <span className="text-gradient block">Installation</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get up and running in minutes with these simple steps
+          <p className="text-xl text-cinereous max-w-3xl mx-auto font-medium leading-relaxed">
+            Get up and running in minutes with our streamlined installation process
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4">{step.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+            <div key={index} className="relative group">
+              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 hover:border-celadon/30 hover:-translate-y-2">
+                {/* Step Number */}
+                <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                  {index + 1}
+                </div>
+                
+                <div className={`${step.color} p-4 rounded-2xl mb-6 w-fit shadow-lg`}>
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-night">{step.title}</h3>
+                <p className="text-cinereous leading-relaxed">{step.description}</p>
               </div>
+              
+              {/* Connection Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                  <div className="w-8 h-0.5 bg-gray-300"></div>
+                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                  <div className="w-8 h-0.5 bg-gradient-to-r from-viridian to-celadon"></div>
                 </div>
               )}
             </div>
           ))}
+        </div>
+        
+        {/* CTA */}
+        <div className="text-center">
+          <button 
+            onClick={handleDownload}
+            className="inline-flex items-center px-10 py-5 bg-gradient-primary text-white rounded-2xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          >
+            <Download className="mr-3 h-6 w-6" />
+            Download Schoology X Now
+          </button>
         </div>
       </div>
     </section>
