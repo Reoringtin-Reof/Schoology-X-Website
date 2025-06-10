@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-night text-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 bg-viridian rounded-full"></div>
         <div className="absolute bottom-10 right-10 w-24 h-24 bg-celadon rounded-full"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-cinereous rounded-full"></div>
@@ -19,9 +19,9 @@ export function Footer() {
               <div className="bg-gradient-primary p-3 rounded-xl">
                 <CheckSquare className="h-8 w-8 text-white" />
               </div>
-              <span className="ml-3 text-2xl font-bold">Schoology X</span>
+              <span className="ml-3 text-2xl font-bold text-white">Schoology X</span>
             </div>
-            <p className="text-platinum/80 leading-relaxed mb-6">
+            <p className="text-gray-300 leading-relaxed mb-6">
               Enhancing your Schoology experience with beautiful, functional checkboxes. 
               Free, open-source, and privacy-focused.
             </p>
@@ -40,13 +40,13 @@ export function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-xl font-bold mb-6 text-celadon">Quick Links</h3>
             <div className="space-y-4">
-              <a href="#features" className="block text-platinum/80 hover:text-white transition-colors duration-200">Features</a>
-              <a href="#installation" className="block text-platinum/80 hover:text-white transition-colors duration-200">Installation</a>
+              <a href="#features" className="block text-gray-300 hover:text-white transition-colors duration-200">Features</a>
+              <a href="#installation" className="block text-gray-300 hover:text-white transition-colors duration-200">Installation</a>
               <a 
                 href="https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block text-platinum/80 hover:text-white transition-colors duration-200"
+                className="block text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Installation Guide
               </a>
@@ -57,10 +57,10 @@ export function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-xl font-bold mb-6 text-celadon">Support</h3>
             <div className="space-y-4">
-              <p className="text-platinum/80">
+              <p className="text-gray-300">
                 Need help? Check out our GitHub repository for documentation and support.
               </p>
-              <div className="flex items-center text-platinum/80">
+              <div className="flex items-center text-gray-300">
                 <Heart className="h-4 w-4 mr-2 text-red-400 fill-current" />
                 Made with love for students
               </div>
@@ -69,17 +69,17 @@ export function Footer() {
         </div>
         
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-cinereous/30">
+        <div className="pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-platinum/60 mb-4 md:mb-0">
+            <div className="text-gray-400 mb-4 md:mb-0">
               <p>&copy; {new Date().getFullYear()} Schoology X. Open source and free forever.</p>
             </div>
             <div className="flex items-center space-x-6">
-              <span className="text-platinum/60">Privacy First</span>
-              <span className="text-platinum/60">•</span>
-              <span className="text-platinum/60">No Data Collection</span>
-              <span className="text-platinum/60">•</span>
-              <span className="text-platinum/60">100% Free</span>
+              <span className="text-gray-400">Privacy First</span>
+              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">No Data Collection</span>
+              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">100% Free</span>
             </div>
           </div>
         </div>

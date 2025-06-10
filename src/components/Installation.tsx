@@ -8,28 +8,28 @@ export function Installation() {
 
   const steps = [
     {
-      icon: <Download className="h-10 w-10 text-white" />,
+      icon: <Download className="h-10 w-10 text-night" />,
       title: "Download Extension",
       description: "Get the latest version with one click",
-      color: "bg-gradient-to-br from-viridian to-celadon"
+      color: "bg-white"
     },
     {
-      icon: <Chrome className="h-10 w-10 text-white" />,
+      icon: <Chrome className="h-10 w-10 text-viridian" />,
       title: "Add to Browser",
       description: "Install seamlessly in Chrome browser",
-      color: "bg-gradient-to-br from-celadon to-viridian"
+      color: "bg-white"
     },
     {
-      icon: <Settings className="h-10 w-10 text-white" />,
+      icon: <Settings className="h-10 w-10 text-night" />,
       title: "Configure Settings",
       description: "Customize to match your preferences",
-      color: "bg-gradient-to-br from-cinereous to-viridian"
+      color: "bg-white"
     },
     {
-      icon: <Monitor className="h-10 w-10 text-white" />,
+      icon: <Monitor className="h-10 w-10 text-viridian" />,
       title: "Start Using",
       description: "Enjoy your enhanced Schoology experience",
-      color: "bg-gradient-to-br from-viridian to-cinereous"
+      color: "bg-white"
     }
   ];
 
@@ -52,16 +52,16 @@ export function Installation() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 relative">
           {steps.map((step, index) => (
             <div key={index} className="relative group">
-              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 hover:border-celadon/30 hover:-translate-y-2">
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 hover:border-celadon/30 hover:-translate-y-2">
                 {/* Step Number */}
                 <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
                   {index + 1}
                 </div>
                 
-                <div className={`${step.color} p-4 rounded-2xl mb-6 w-fit shadow-lg`}>
+                <div className={`${step.color} p-4 rounded-2xl mb-6 w-fit shadow-lg border border-platinum/30`}>
                   {step.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-night">{step.title}</h3>
@@ -71,7 +71,7 @@ export function Installation() {
               {/* Connection Line */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-viridian to-celadon"></div>
+                  <div className="w-8 h-1 bg-gradient-to-r from-viridian to-celadon rounded-full shadow-sm"></div>
                 </div>
               )}
             </div>
